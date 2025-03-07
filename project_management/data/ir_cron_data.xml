@@ -1,0 +1,22 @@
+<odoo>
+    <record id="ir_cron_update_project_status" model="ir.cron">
+        <field name="name">Update Status Proyek Otomatis</field>
+        <field name="model_id" ref="model_project_management"/>
+        <field name="state">code</field>
+        <field name="code">model.update_project_status()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+    <record id="ir_cron_sync_trello_status" model="ir.cron">
+        <field name="name">Sinkronisasi Status Proyek dari Trello</field>
+        <field name="model_id" ref="model_project_management"/>
+        <field name="state">code</field>
+        <field name="code">model.sync_status_from_trello()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+</odoo>

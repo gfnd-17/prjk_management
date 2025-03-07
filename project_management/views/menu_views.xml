@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Items -->
+    <menuitem id="menu_project_management_root" 
+            name="Project Management" 
+            sequence="10"/>
+    
+    <menuitem id="menu_project_management" 
+        name="Proyek" 
+        parent="menu_project_management_root" 
+        sequence="10"/>
+
+</odoo>

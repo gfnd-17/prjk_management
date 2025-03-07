@@ -1,0 +1,19 @@
+<odoo>
+    <record id="email_template_project_status" model="mail.template">
+        <field name="name">Notifikasi Perubahan Status Proyek</field>
+        <field name="model_id" ref="model_project_management"/>
+        <field name="email_from">${(object.user_id.email or 'no-reply@yourdomain.com')|safe}</field>
+        <field name="email_to">govindo1706@gmail.com</field>
+        <field name="subject">
+            Status Proyek: ${object.name}
+        </field>
+        <field name="body_html">
+            <![CDATA[
+                <p>Halo,</p>
+                <p>Status proyek <strong>${object.name}</strong> telah berubah menjadi <strong>${dict(object._fields['status'].selection).get(object.status)}</strong>.</p>
+                <p>Silahkan cek detail proyek pada sistem.</p>
+                <p>Terima kasih.</p>
+            ]]>
+        </field>
+    </record>
+</odoo>
